@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, Form, Card, Alert, Toast } from 'react-bootstrap'
+import { Button, Form, Card} from 'react-bootstrap'
 import { userSchema } from '../utils/validationSchema'
 import WebcamCapture from './WebcamCapture'
 import { useApi } from '../hooks/useApi'

@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button, Form, Toast } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { User } from "../types/userTypes";

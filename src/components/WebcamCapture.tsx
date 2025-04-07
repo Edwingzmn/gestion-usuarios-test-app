@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react'
 import Webcam from 'react-webcam'
-import { Button, Modal, Image, Row, Col } from 'react-bootstrap'
+import { Button, Modal, Row, Col } from 'react-bootstrap'
 import { Cropper, ReactCropperElement } from 'react-cropper'
 import 'cropperjs/dist/cropper.css'
 
@@ -15,13 +15,6 @@ const WebcamCapture: React.FC<WebcamCaptureProps> = ({ onCapture, show, onHide }
   const cropperRef = useRef<ReactCropperElement>(null)
   const [capturedImage, setCapturedImage] = useState<string | null>(null)
   const [mode, setMode] = useState<'capture' | 'crop'>('capture')
-
-  // Opciones para el recorte automático
-  const autoCropOptions = {
-    width: 300,
-    height: 300,
-    unit: 'px'
-  }
 
   const capture = useCallback(() => {
     if (webcamRef.current) {
