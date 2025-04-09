@@ -59,12 +59,16 @@ export const useApi = () => {
     try {
         let whereClause = undefined;
         if (searchTerm) {
-            whereClause = JSON.stringify({
-                apellidoPaterno: {
-                    $iLike: `%${searchTerm}%`
-                }
-            });
-            console.log("Cláusula Where:", whereClause);
+        // Código anterior
+        //   whereClause = JSON.stringify({
+        //     apellidoPaterno: {
+        //         $iLike: `%${searchTerm}%`
+        //     }
+        // });
+        // console.log("Cláusula Where:", whereClause);
+        // Código nuevo corregido
+          whereClause = `(apellidoPaterno,like,%${searchTerm}%)`;
+          console.log("Cláusula Where:", whereClause);
         }
 
         const response = await axios.get(API_URL, {
